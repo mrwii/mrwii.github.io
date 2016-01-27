@@ -1,0 +1,58 @@
+#list {
+	width: 250px;
+	float: left;
+}
+
+ol#list li b {
+	display: block;
+	margin-top: 15px;
+}
+
+li.active b {
+	color:#FF0000;
+}
+
+a:link,a:visited,a:hover,a:active {
+	color:#0000EE;
+}
+a.active {
+	color:#FF0000;
+	font-weight: bold;
+	text-decoration: none;
+	pointer-events: none;	/*cursor: default;*/
+}
+	
+#player {
+	
+}
+
+#nextbtn {
+	position: absolute;
+	bottom: 5px;
+	right: 25px;
+}
+#prevbtn {
+	position: absolute;
+	bottom: 5px;
+	left: 25px;
+}
+
+#shadow {
+  background: #000;
+  left: 0;
+  opacity: 0.90;
+  filter: alpha(opacity=90);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 101;
+}
+
+#player {
+  position: relative;
+  -moz-transition: width,height 0.2s ease-in-out;
+  -o-transition: width,height 0.2s ease-in-out;
+  -webkit-transition: width,height 0.2s ease-in-out;
+  -ms-transition: width,height 0.2s ease-in-out;
+  transition: width,height 0.2s ease-in-out;
+}

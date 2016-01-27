@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Flat UI Kit - HTML/PSD Design Framework</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <!-- Loading Bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <!-- Loading Flat UI -->
+    <link rel="stylesheet" href="./css/flat-ui.css">
+    <link rel="stylesheet" href="./css/style.css"/>
+  </head>
+  <body>
+    <div style="float:left;">
+      <iframe id='listtest' width="350" height="1400" src="./list-test-cases.html" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="container">
+      <h3 class="demo-panel-title">Color Swatches</h3>
+      <div class="row">
+        <div class="span9">
+          <div class="row mbl">
+            <div class="span3">
+              <dl class="palette palette-peter-river">
+                <dt>#1abc9c</dt>
+                <dd>Peter river</dd>
+              </dl>
+              <dl class="palette palette-belize-hole">
+                <dt>#16a085</dt>
+                <dd>Belize hole</dd>
+              </dl>
+            </div>
+            
+            <div class="span3">
+              <dl class="palette palette-pale-sky">
+                <dt>#627385</dt>
+                <dd>Pale Sky</dd>
+              </dl>
+              <dl class="palette palette-pickled-bluewood2">
+                <dt>#2C3E50</dt>
+                <dd>Pickled Bluewood</dd>
+              </dl>
+            </div>
+
+            <div class="span3">
+              <dl class="palette2 palette-iron">
+                <dt>#d6dbdf</dt>
+                <dd>Iron</dd>
+              </dl>
+              <dl class="palette palette-black">
+                <dt>#000000</dt>
+                <dd>Black</dd>
+              </dl>
+            </div>
+          </div> <!-- /color swatches -->
+          
+          <div class="row mbl">
+            <div class="span3">
+              <dl class="palette palette-sun-flower">
+                <dt>#f1c40f</dt>
+                <dd>Sun flower</dd>
+              </dl>
+              <dl class="palette palette-orange">
+                <dt>#f39c12</dt>
+                <dd>Orange</dd>
+              </dl>
+            </div>
+            
+            <div class="span3">
+              <dl class="palette palette-supernova">
+                <dt>#FFC601</dt>
+                <dd>Supernova</dd>
+              </dl>
+              <dl class="palette palette-tuatara">
+                <dt>#232221</dt>
+                <dd>Tuatara</dd>
+              </dl>
+            </div>
+
+            <div class="span3">
+              <dl class="palette palette-carrot">
+                <dt>#e67e22</dt>
+                <dd>Carrot</dd>
+              </dl>
+              <dl class="palette palette-pumpkin">
+                <dt>#d35400</dt>
+                <dd>Pumpkin</dd>
+              </dl>
+            </div>
+
+          </div> <!-- /color swatches -->
+          
+          
+        </div>
+
+      </div> <!-- /swatches row -->
+      <a id="prevbtn">
+        <img src="assets/prev-icon.png" title="Prev Test" alt="Prev Test" width="50" height="50" />
+      </a>
+      <a id="nextbtn">
+        <img src="assets/next-icon.png" title="Next Test" alt="Next Test" width="50" height="50" />
+      </a>
+     <script type='text/javascript'>
+      document.getElementById('listtest').onload = function()
+      {
+        document.getElementById('prevbtn').href = prevUrl;
+        
+        if (typeof nextUrl != 'undefined')
+          document.getElementById('nextbtn').href = nextUrl;
+        else
+          document.getElementById('nextbtn').style.display = 'none';
+      };
+    </script>
+  </body>
+</html>
