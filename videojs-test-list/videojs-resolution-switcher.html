@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <head>
+    <title>Video.js | HTML5 Video Player</title>
+    <link href="./video-js-5.6.0/video-js.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet"/>
+    <link href="./plugins/videojs-resolution-switcher.css" rel="stylesheet">
+    
+    <script src="./video-js-5.6.0/ie8/videojs-ie8.min.js"></script>
+    <script src="./video-js-5.6.0/video.js"></script>
+
+  </head>
+
+</head>
+
+<body>
+  <div style="float:left;">
+    <iframe id='listtest' width="350" height="1400" src="./list-test-cases.html" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="container" style="float:left;">
+    <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264" poster="http://vjs.zencdn.net/v/oceans.png" data-setup="{}">
+      <source src="https://vjs.zencdn.net/v/oceans.mp4?480" type='video/mp4' label='360p' res='360' />
+      <source src="https://vjs.zencdn.net/v/oceans.mp4?1080" type='video/mp4' label='480p' res='480'/>
+      <source src="https://vjs.zencdn.net/v/oceans.mp4?144" type='video/mp4' label='720p' res='720'/>
+      <source src="https://vjs.zencdn.net/v/oceans.mp4?2160" type='video/mp4' label='4K' res='2160'/>
+      <track kind="captions" src="./video-js-5.6.0/examples/shared/example-captions.vtt" srclang="en" label="English"></track>
+      <!-- Tracks need an ending tag thanks to IE9 -->
+      <track kind="subtitles" src="./video-js-5.6.0/examples/shared/example-captions.vtt" srclang="en" label="English"></track>
+      <!-- Tracks need an ending tag thanks to IE9 -->
+      <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    </video>
+  </div>
+  <a id="prevbtn">
+    <img src="assets/prev-icon.png" title="Prev Test" alt="Prev Test" width="50" height="50" />
+  </a>
+  <a id="nextbtn">
+    <img src="assets/next-icon.png" title="Next Test" alt="Next Test" width="50" height="50" />
+  </a>
+  <script src="./plugins/videojs-resolution-switcher.js"></script>
+  <script type='text/javascript'>
+    document.getElementById('listtest').onload = function()
+    {
+      document.getElementById('prevbtn').href = prevUrl;
+      
+      if (typeof nextUrl != 'undefined')
+        document.getElementById('nextbtn').href = nextUrl;
+      else
+        document.getElementById('nextbtn').style.display = 'none';
+    };
+    videojs('example_video_1').videoJsResolutionSwitcher();
+  </script>
+</body>
+
+</html>
