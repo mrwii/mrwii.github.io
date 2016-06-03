@@ -6,38 +6,11 @@
 	<script src="./player/jwplayer.js" type="text/javascript"></script>
 	<script type='text/javascript'>
 		var tracks;
-		jwp.onPlay(function() {
-			if(jwplayer.utils.isIOS()){
-				/* Get the video */
-				var oVid = jwp.container.getElementsByTagName("video")[0];
-				if(oVid){
-					/* Remove existing tracks */
-					var oTracks = oVid.getElementsByTagName("track");
-					if(oTracks){
-						for(var tr=oTracks.length,tre=0; tr>=tre; tr--){
-							if(oTracks[tr]) oVid.removeChild(oTracks[tr]);
-						}
-					}
-					/* Add this playlist item tracks */
-					var oPLI = jwp.getPlaylistItem();
-					if(oPLI && oPLI["tracks"] && oPLI["tracks"].length>0){
-						for( var tr in oPLI["tracks"]){
-							var oTR = oPLI["tracks"][tr];
-							var oTrackTag = document.createElement("track");
-							for(var attr in oTR){
-								var sAttr = (attr=="file"?"src":attr);
-								if(attr!="default"||(attr=="default" && oTR[attr]==true)) oTrackTag.setAttribute(sAttr,oTR[attr]);
-							}
-							oVid.appendChild(oTrackTag);
-						}
-					}
-				}
-			} else {
-				tracks = [
-					{ file: "http://v2.cdn.clip.vn/ri2vTgzu4BJRaNMWLnAK/1/captions/0/0/52/1724039/1724039.vie.vtt", kind: "captions", label: "cdn.clip sub" }
-				];
-			}
-		});
+		if(!jwplayer.utils.isIOS()){
+			tracks = [
+				{ file: "http://v2.cdn.clip.vn/ri2vTgzu4BJRaNMWLnAK/1/captions/0/0/52/1724039/1724039.vie.vtt", kind: "captions", label: "cdn.clip sub" }
+			];
+		}
 	</script>
 </head>
 <body>
@@ -67,6 +40,34 @@
 			//primary: primaryCookie
 			//primary: "flash"
 			//primary: "html5"
+		});
+		jwp.onPlay(function() {
+			if(jwplayer.utils.isIOS()){
+				/* Get the video */
+				var oVid = jwp.container.getElementsByTagName("video")[0];
+				if(oVid){
+					/* Remove existing tracks */
+					var oTracks = oVid.getElementsByTagName("track");
+					if(oTracks){
+						for(var tr=oTracks.length,tre=0; tr>=tre; tr--){
+							if(oTracks[tr]) oVid.removeChild(oTracks[tr]);
+						}
+					}
+					/* Add this playlist item tracks */
+					var oTrackTag = document.createElement("track");
+					oTrackTag.setAttribute("src", "./assets/dw_trailer_low.vtt");
+					oTrackTag.setAttribute("kind", "subtitles");
+					oTrackTag.setAttribute("label", "Tiếng Việt");
+					oTrackTag.setAttribute("default", "true");
+					oVid.appendChild(oTrackTag);
+					
+					var oTrackTag2 = document.createElement("track");
+					oTrackTag2.setAttribute("src", "./assets/dw_trailer_low.vtt");
+					oTrackTag2.setAttribute("kind", "subtitles");
+					oTrackTag2.setAttribute("label", "Tiếng Anh");
+					oVid.appendChild(oTrackTag2);
+				}
+			}
 		});
 	</script>
 </body>
