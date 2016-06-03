@@ -52,6 +52,7 @@
 						/* Add this playlist item tracks */
 						var oPLI = jwp.getPlaylistItem();
 						if(oPLI && oPLI["tracks"] && oPLI["tracks"].length>0){
+							jwp.setCurrentCaptions(0);
 							for( var tr in oPLI["tracks"]){
 								var oTR = oPLI["tracks"][tr];
 								var oTrackTag = document.createElement("track");
