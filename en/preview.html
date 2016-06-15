@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JW Player 6.12</title>
+  <script type="text/javascript" src="./player/jwplayer.js"></script>
+</head>
+<body>
+  <center>
+    <br/><br/>
+    <div id="player" tabindex="-1">Loading the player...</div>
+  </center>
+
+  <script type="text/javascript">
+    jwplayer('player').setup({
+      //file: "http://vjs.zencdn.net/v/oceans.mp4",
+      sources: [
+        { file: "http://vjs.zencdn.net/v/oceans.mp4?hd", label: "720p" },
+        { file: "http://vjs.zencdn.net/v/oceans.mp4?hq", label: "480p" },
+        { file: "http://vjs.zencdn.net/v/oceans.mp4", label: "360p" }
+      ],
+      tracks: [{ 
+        file: './assets/jw6-english.vtt', 
+        label: 'English', 
+        kind: 'captions'
+      },{ 
+        file: './assets/jw6-russian.vtt', 
+        label: 'Russian', 
+        kind: 'captions',
+        'default':true
+      }],
+      image: './assets/thumb.jpg',
+      width: "630",		//800
+      height: "500",	//340
+      //repeat: "true",
+      //autostart: "true",
+      primary: 'html5'
+    });
+  </script>
+
+</body>
+</html>
