@@ -1,6 +1,20 @@
 {
 "code":0,
 "message":"thành công",
-"data":{},
+"data":{
+  "expo":{
+    "year":2017,
+    "phase":[
+      {
+        "city":"hanoi",
+        "topic":"Construction - Building Materials – Architecture - Real Estate & Interior-Exterior Decoration",
+        "topic_vi":"Xây dựng - Vật liệu xây dựng - Kiến trúc - Bất động sản & Trang trí nội ngoại thất",
+        "time":"19/04 - 23/04/2017",
+        "scale":700,
+        "location":"At 2/9 Square 2/9 St, Hai Chau Dist, Da Nang City"
+      }
+     ]
+  }
+},
 "total":98
 }
